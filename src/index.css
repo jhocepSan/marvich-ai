@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+@layer components {
+  .section-title {
+    @apply text-3xl font-bold mb-8 text-cyan-400;
+  }
+
+  .section-subtitle {
+    @apply text-xl font-semibold mb-4 text-cyan-300;
+  }
+
+  .btn-primary {
+    @apply bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-md transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-cyan-500/20 transition-all duration-300;
+  }
+}
+
+
+/* Custom animations to replace AOS */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-fade-right {
+  animation: fadeRight 1s ease-in-out;
+}
+
+.animate-fade-left {
+  animation: fadeLeft 1s ease-in-out;
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Swiper custom styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background: #1bbfb8 !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1bbfb8 !important;
+}
+
+.solutions-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Hero image swiper specific styles */
+.hero-image-swiper {
+  height: 100%;
+}
+
+.hero-image-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+
+/* Add this to your global CSS file */
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 180px;
+  height: 100px;
+}
+
+/* Left to Right animation */
+.marquee-left-to-right {
+  animation: marquee-left-to-right 30s linear infinite;
+}
+
+@keyframes marquee-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Right to Left animation */
+.marquee-right-to-left {
+  animation: marquee-right-to-left 30s linear infinite;
+}
+
+@keyframes marquee-right-to-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.marquee-container:hover .marquee {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marquee-item {
+    width: 150px;
+    height: 80px;
+  }
+}
+
+.notShow{
+  display: none;
+}
