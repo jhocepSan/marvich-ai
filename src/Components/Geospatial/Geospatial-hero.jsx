@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
-import image2 from "../../assets/imagen11.png"
+import image2 from "../../assets/hero/general.png"
 
 const GeospatialHero = () => {
   useEffect(() => {

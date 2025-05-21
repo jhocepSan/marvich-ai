@@ -155,7 +155,7 @@ const AboutUsSection = () => {
                 <ul className="space-y-2 text-gray-300 ml-9">
                   <li className="flex items-start">
                     <span className="text-cyan-400 mr-3">•</span>
-                    <p>Base en Chile</p>
+                    <p>Oficinas principales Chile</p>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-400 mr-3">•</span>
@@ -224,7 +224,7 @@ const AboutUsSection = () => {
                     <img
                       src={image10 || "/placeholder.svg"}
                       alt="Mission visualization"
-                      className="w-full h-64 object-cover rounded-lg mt-6"
+                      className="w-full h-100 object-cover rounded-lg mt-6"
                     />
                   </div>
                 )}
@@ -244,7 +244,7 @@ const AboutUsSection = () => {
                     <img
                       src={image10 || "/placeholder.svg"}
                       alt="Vision visualization"
-                      className="w-full h-64 object-cover rounded-lg mt-6"
+                      className="w-full h-100 object-cover rounded-lg mt-6"
                     />
                   </div>
                 )}

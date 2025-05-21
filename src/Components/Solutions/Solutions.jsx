@@ -13,12 +13,10 @@ import image5 from "../../assets/part2/paraquelohacemos/image1.png"
 import image6 from "../../assets/part2/paraquelohacemos/image2.png"
 import image7 from "../../assets/part2/paraquelohacemos/image3.png"
 import image8 from "../../assets/part2/paraquelohacemos/image4.png"
-import image9 from "../../assets/part2/paraquelohacemos/image5.png"
 import image10 from "../../assets/part2/queprocesamos/image1.png"
 import image11 from "../../assets/part2/queprocesamos/image2.png"
 import image12 from "../../assets/part2/queprocesamos/image3.png"
 import image13 from "../../assets/part2/queprocesamos/image4.png"
-import image14 from "../../assets/part2/queprocesamos/image5.png"
 
 const AISection = () => {
   useEffect(() => {
@@ -40,9 +38,9 @@ const AISection = () => {
 
   // Image arrays for each section
   const sectionImages = [
-    [image10, image11, image12, image13, image14], // Que procesamos
+    [image10, image11, image12, image13], // Que procesamos
     [image1, image2, image3, image4], // Como lo hacemos
-    [image5, image6, image7, image8, image9], // Para que lo hacemos
+    [image5, image6, image7, image8], // Para que lo hacemos
   ]
 
   // Toggle dropdown function
