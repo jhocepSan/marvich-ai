@@ -237,7 +237,7 @@ const ForestalPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center"
+        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio"
         style={{
           backgroundImage: `url(${image6 || "/placeholder.svg"})`,
         }}

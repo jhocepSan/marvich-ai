@@ -137,7 +137,7 @@ const IndustriesSection = () => {
               }}
               className="inline-flex items-center text-cyan-600 font-medium hover:text-cyan-700 transition-colors"
             >
-              Conozca más sobre nuetras soluciones
+              Conozca más sobre nuestras soluciones
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"

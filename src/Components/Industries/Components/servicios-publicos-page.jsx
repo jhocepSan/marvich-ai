@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom"
 import image1 from "../../../assets/servicios_publicos/backup.png"
 import imageInferior from "../../../assets/servicios_publicos/inferior.png"
 import imageBanner from "../../../assets/servicios_publicos/superior.png"
+import image1l from "../../../assets/servicios_publicos/1-fila-lateral-mobile-mapping/1lateral.png"
+import image2l from "../../../assets/servicios_publicos/1-fila-lateral-mobile-mapping/2lateral.png"
+import image1d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image3.png"
+import image2d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image2.png"
 
 const ServiciosPublicosPage = () => {
   useEffect(() => {
@@ -109,14 +113,31 @@ const ServiciosPublicosPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="100">
                   <img
-                    src={imageBanner || "/placeholder.svg"}
+                    src={image1l || "/placeholder.svg"}
                     alt="Servicios públicos - Vista superior"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="150">
                   <img
-                    src={imageInferior || "/placeholder.svg"}
+                    src={image2l || "/placeholder.svg"}
+                    alt="Servicios públicos - Vista inferior"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              {/* Additional images from the banner and inferior images */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="100">
+                  <img
+                    src={image1d || "/placeholder.svg"}
+                    alt="Servicios públicos - Vista superior"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="150">
+                  <img
+                    src={image2d || "/placeholder.svg"}
                     alt="Servicios públicos - Vista inferior"
                     className="w-full h-full object-cover"
                   />
@@ -245,7 +266,7 @@ const ServiciosPublicosPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center"
+        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio "
         style={{
           backgroundImage: `url(${imageInferior || "/placeholder.svg"})`,
         }}

@@ -6,6 +6,8 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import image1 from "../../../assets/agricultura/image1.png"
 import image2 from "../../../assets/agricultura/image2.png"
+import image3 from "../../../assets/agricultura/image3.png"
+import image4 from "../../../assets/agricultura/image4.png"
 import image5 from "../../../assets/agricultura/inferior.png"
 import imageBanner from "../../../assets/agricultura/superior.png"
 
@@ -231,12 +233,12 @@ const AgriculturaPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center"
+        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio"
         style={{
           backgroundImage: `url(${image5 || "/placeholder.svg"})`,
         }}
       >
-        <div className="container mx-auto px-4 text-center bg-black/60 p-6 rounded-md">
+        <div className="container mx-auto px-4 text-center bg-black/60 p-6 rounded-md ">
           <h2 className="text-3xl font-bold mb-6" data-aos="fade-up">
             Solicita una evaluación técnica gratuita
           </h2>

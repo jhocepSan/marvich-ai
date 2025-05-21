@@ -19,7 +19,7 @@ const Hero = () => {
   const [fadeIn, setFadeIn] = useState(true)
 
   // Array of images for the slideshow
-  const images = [image1,image3, image4]
+  const images = [image1, image4,image3]
 
   // Effect to handle image transitions
   useEffect(() => {
@@ -41,7 +41,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background with image slideshow */}
       <div className="absolute inset-0 z-0">
-        {[0,1,2,3].includes(currentImageIndex)&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-40 z-10"></div>}
+        {false&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-50 z-10"></div>}
 
         {/* Image background with transition */}
         <div className="absolute inset-0 w-full h-full">
@@ -53,10 +53,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 z-10 w-full">
+      <div className="container mx-auto px-4 z-10 w-full ">
         <div className="flex flex-col items-center py-10">
           {/* Text section - static content */}
-          <div data-aos="fade-up" className="w-full">
+          <div data-aos="fade-up" className="w-full bg-black/20 p-6 rounded-md">
             <div className="opacity-100 transform translate-y-0">
               {/* Technology tag above title */}
               <div

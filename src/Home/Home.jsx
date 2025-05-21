@@ -19,7 +19,7 @@ const Home = () => {
             <AboutUsSection/>
             <Clients/>
             <Contact/>
-            <Testimonials/>
+            {false&&<Testimonials/>}
         </div>
     );
 };

@@ -53,20 +53,24 @@ const AiTerritorial = () => {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
                     {/* Main title with animation */}
-                    <h1 className="text-3xl md:text-2xl lg:text-4xl font-bold mb-6 leading-tight max-w-4xl">
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                        data-aos="fade-right">
                         <span className="text-cyan-400">
                             Inteligencia Artificial geoespacial para decisiones que transforman territorios.
                         </span>
                     </h1>
                     {/* Subtitle with animation */}
                     <p
-                        className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10"
-                        >
+                        className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10 font-bold"
+                        data-aos="fade-left"
+                        data-aos-delay="200"
+                    >
                         Desde la oficina hasta el terreno: nuestra plataforma transforma datos crudos en inteligencia territorial lista para actuar.
                     </p>
                     <div className="py-6"></div>
                     {/* Main title with animation */}
-                    <h1 className="text-3xl md:text-2xl lg:text-4xl font-bold mb-6 leading-tight max-w-4xl">
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                        data-aos="fade-right">
                         <span className="text-cyan-400">
                             Menos incentidumbre, más impacto en tus decisiones
                         </span>
@@ -74,7 +78,9 @@ const AiTerritorial = () => {
 
                     {/* Subtitle with animation */}
                     <p
-                        className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10"
+                        className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10 font-bold"
+                        data-aos="fade-left"
+                        data-aos-delay="200"
                     >
                         Monitoreamos, analizamos y anticipamos eventos criticos a partir de datos espaciales para industrias como la forestal, agricola, urbana y más.
                     </p>
