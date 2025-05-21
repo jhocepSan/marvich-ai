@@ -9,7 +9,7 @@ const AiTerritorial = () => {
     const [fadeIn, setFadeIn] = useState(true)
 
     // Array of images for the slideshow
-    const images = [image1, image2]
+    const images = [image2]
 
     // Effect to handle image transitions
     useEffect(() => {
@@ -61,9 +61,7 @@ const AiTerritorial = () => {
                     {/* Subtitle with animation */}
                     <p
                         className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10"
-                        data-aos="fade-left"
-                        data-aos-delay="200"
-                    >
+                        >
                         Desde la oficina hasta el terreno: nuestra plataforma transforma datos crudos en inteligencia territorial lista para actuar.
                     </p>
                     <div className="py-6"></div>
@@ -77,8 +75,6 @@ const AiTerritorial = () => {
                     {/* Subtitle with animation */}
                     <p
                         className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10"
-                        data-aos="fade-left"
-                        data-aos-delay="200"
                     >
                         Monitoreamos, analizamos y anticipamos eventos criticos a partir de datos espaciales para industrias como la forestal, agricola, urbana y más.
                     </p>

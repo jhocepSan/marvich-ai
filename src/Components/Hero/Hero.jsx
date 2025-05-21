@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import image1 from "../../assets/hero/globo.png"
+import image1 from "../../assets/hero/image4.png"
 import image2 from '../../assets/hero/image3.png'
 import image3 from "../../assets/hero/image1.png"
 import image4 from "../../assets/hero/image2.png"
@@ -19,7 +19,7 @@ const Hero = () => {
   const [fadeIn, setFadeIn] = useState(true)
 
   // Array of images for the slideshow
-  const images = [image3, image4]
+  const images = [image1,image3, image4]
 
   // Effect to handle image transitions
   useEffect(() => {
@@ -41,7 +41,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background with image slideshow */}
       <div className="absolute inset-0 z-0">
-        {[0,1,2,3].includes(currentImageIndex)&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-50 z-10"></div>}
+        {[0,1,2,3].includes(currentImageIndex)&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-40 z-10"></div>}
 
         {/* Image background with transition */}
         <div className="absolute inset-0 w-full h-full">
