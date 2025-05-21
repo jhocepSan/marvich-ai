@@ -1,9 +1,32 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
+import image1 from "../../assets/hero/image3.png"
 import image2 from "../../assets/image12.png"
 
 const AiTerritorial = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const [fadeIn, setFadeIn] = useState(true)
+
+    // Array of images for the slideshow
+    const images = [image1, image2]
+
+    // Effect to handle image transitions
+    useEffect(() => {
+        const transitionInterval = setInterval(() => {
+            // Start fade out
+            setFadeIn(false)
+
+            // After fade out completes, change image and start fade in
+            setTimeout(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+                setFadeIn(true)
+            }, 1000) // This should match the transition duration in CSS
+        }, 5000) // Change image every 5 seconds
+
+        return () => clearInterval(transitionInterval)
+    }, [images.length])
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -17,7 +40,7 @@ const AiTerritorial = () => {
             <div
                 className="absolute inset-0 w-full h-full "
                 style={{
-                    backgroundImage: `url(${image2 || "/placeholder.svg"})`,
+                    backgroundImage: `url(${images[currentImageIndex] || "/placeholder.svg"})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
@@ -50,7 +73,7 @@ const AiTerritorial = () => {
                             Menos incentidumbre, más impacto en tus decisiones
                         </span>
                     </h1>
-                    
+
                     {/* Subtitle with animation */}
                     <p
                         className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6 sm:mt-8 md:mt-10"

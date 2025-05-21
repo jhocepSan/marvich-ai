@@ -19,7 +19,7 @@ const Hero = () => {
   const [fadeIn, setFadeIn] = useState(true)
 
   // Array of images for the slideshow
-  const images = [image2, image3, image4]
+  const images = [image3, image4]
 
   // Effect to handle image transitions
   useEffect(() => {
@@ -41,7 +41,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background with image slideshow */}
       <div className="absolute inset-0 z-0">
-        {[1,2,3].includes(currentImageIndex)&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-50 z-10"></div>}
+        {[0,1,2,3].includes(currentImageIndex)&&<div className="absolute inset-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 opacity-50 z-10"></div>}
 
         {/* Image background with transition */}
         <div className="absolute inset-0 w-full h-full">
