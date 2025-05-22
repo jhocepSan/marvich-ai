@@ -1,6 +1,6 @@
 import AOS from "aos"
 import "aos/dist/aos.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import image1 from "../../../assets/servicios_publicos/backup.png"
@@ -12,6 +12,27 @@ import image1d from "../../../assets/servicios_publicos/2-fila-lateral-infraestr
 import image2d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image2.png"
 
 const ServiciosPublicosPage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [fadeIn, setFadeIn] = useState(true)
+
+  // Array of images for the slideshow
+  const images = [image1l, image2l]
+
+  // Effect to handle image transitions
+  useEffect(() => {
+    const transitionInterval = setInterval(() => {
+      // Start fade out
+      setFadeIn(false)
+
+      // After fade out completes, change image and start fade in
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        setFadeIn(true)
+      }, 1000) // This should match the transition duration in CSS
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(transitionInterval)
+  }, [images.length])
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -103,29 +124,12 @@ const ServiciosPublicosPage = () => {
               {/* Main large image */}
               <div className="rounded-xl overflow-hidden shadow-lg h-[400px]" data-aos="fade-left">
                 <img
-                  src={image1 || "/placeholder.svg"}
+                  src={images[currentImageIndex] || "/placeholder.svg"}
                   alt="Servicios públicos - Infraestructura urbana"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Additional images from the banner and inferior images */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="100">
-                  <img
-                    src={image1l || "/placeholder.svg"}
-                    alt="Servicios públicos - Vista superior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="150">
-                  <img
-                    src={image2l || "/placeholder.svg"}
-                    alt="Servicios públicos - Vista inferior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
               {/* Additional images from the banner and inferior images */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="100">
@@ -266,7 +270,7 @@ const ServiciosPublicosPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio "
+        className="h-screen bg-[#1f2937] text-white bg-cover bg-center flex items-center justify-center hmio "
         style={{
           backgroundImage: `url(${imageInferior || "/placeholder.svg"})`,
         }}

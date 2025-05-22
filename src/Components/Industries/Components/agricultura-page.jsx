@@ -2,7 +2,7 @@
 
 import AOS from "aos"
 import "aos/dist/aos.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import image1 from "../../../assets/agricultura/image1.png"
 import image2 from "../../../assets/agricultura/image2.png"
@@ -12,6 +12,28 @@ import image5 from "../../../assets/agricultura/inferior.png"
 import imageBanner from "../../../assets/agricultura/superior.png"
 
 const AgriculturaPage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [fadeIn, setFadeIn] = useState(true)
+
+  // Array of images for the slideshow
+  const images = [image1, image2]
+  const imagess = [image3,image4]
+
+  // Effect to handle image transitions
+  useEffect(() => {
+    const transitionInterval = setInterval(() => {
+      // Start fade out
+      setFadeIn(false)
+
+      // After fade out completes, change image and start fade in
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        setFadeIn(true)
+      }, 1000) // This should match the transition duration in CSS
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(transitionInterval)
+  }, [images.length])
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -106,11 +128,11 @@ const AgriculturaPage = () => {
 
             <div className="space-y-8">
               <div className="rounded-xl overflow-hidden shadow-lg" data-aos="fade-left">
-                <img src={image1 || "/placeholder.svg"} alt="Agricultura 1" className="w-full h-[400px] object-cover" />
+                <img src={images[currentImageIndex] || "/placeholder.svg"} alt="Agricultura 1" className="w-full h-[400px] object-cover" />
               </div>
 
               <div className="rounded-xl overflow-hidden shadow-lg" data-aos="fade-left" data-aos-delay="100">
-                <img src={image2 || "/placeholder.svg"} alt="Agricultura 2" className="w-full h-[400px] object-cover" />
+                <img src={imagess[currentImageIndex] || "/placeholder.svg"} alt="Agricultura 2" className="w-full h-[400px] object-cover" />
               </div>
             </div>
           </div>
@@ -233,7 +255,7 @@ const AgriculturaPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio"
+        className="h-screen bg-[#1f2937] text-white bg-cover bg-center flex items-center justify-center hmio"
         style={{
           backgroundImage: `url(${image5 || "/placeholder.svg"})`,
         }}

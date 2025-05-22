@@ -1,11 +1,16 @@
 
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import logo from "../../assets/marca.svg"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
-
+  const navigate = useNavigate()
+  const handleNav = (hash) => {
+    console.log(hash)
+    navigate("/#" + hash)
+  }
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -51,24 +56,27 @@ const Navbar = () => {
     }
   }, [sidebarOpen])
 
-  
+
 
   const navLinks = [
     { name: "HOME", href: "/" },
-    { name: "SOLUCIONES", href: "#solutions" },
-    { name: "INDUSTRIAS", href: "#industries" },
-    { name: "CONTACTO", href: "#contact" },
+    { name: "SOLUCIONES", href: "/#solutions" },
+    { name: "INDUSTRIAS", href: "/#industries" },
+    { name: "CONTACTO", href: "/#contact" },
     { name: "PREGUNTAS FRECUENTES", href: "" },
   ]
-
+  useEffect(() => {
+    if(window.location.href.split('#')[1]!=undefined){
+      handleNav(window.location.href.split('#')[1])
+    }
+  }, [])
   return (
     <>
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
             ? "bg-gray-900/90 border-b-4 border-[#266298] backdrop-blur-md py-2 shadow-lg"
             : "bg-gray-900/70 py-4"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <a href="/" className="flex items-center">
@@ -114,15 +122,13 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-50 md:hidden transition-opacity duration-300 ${
-          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-50 md:hidden transition-opacity duration-300 ${sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         aria-hidden={!sidebarOpen}
       >
         <div
-          className={`sidebar fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out ${
-            sidebarOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`sidebar fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="flex justify-between items-center p-4 border-b border-gray-700">
             <a href="/" className="flex items-center" onClick={() => setSidebarOpen(false)}>

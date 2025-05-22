@@ -273,7 +273,7 @@ const MineriaEnergiaPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-[#1f2937] text-white bg-cover bg-center hmio"
+        className="h-screen bg-[#1f2937] text-white bg-cover bg-center flex items-center justify-center hmio"
         style={{
           backgroundImage: `url(${imageInferior || "/placeholder.svg"})`,
         }}
