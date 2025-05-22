@@ -68,6 +68,7 @@ const Navbar = () => {
   useEffect(() => {
     if(window.location.href.split('#')[1]!=undefined){
       handleNav(window.location.href.split('#')[1])
+      window.location.href = "/#" +window.location.href.split('#')[1]
     }
   }, [])
   return (
