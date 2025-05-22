@@ -15,15 +15,50 @@ export const Contact = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    // Show sweet alert
+    var datos = {
+      "nombre": e.target.name.value,
+      "empresa": e.target.company.value,
+      "cargo": e.target.position.value,
+      "email": e.target.email.value,
+      "mensaje": e.target.message.value
+    }
     Swal.fire({
-      title: "¡Mensaje Enviado!",
-      text: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
-      icon: "success",
-      confirmButtonText: "Aceptar",
-      confirmButtonColor: "#06b6d4",
+      title: 'Cargando...',
+      text: 'Por favor espera',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      },
     })
+    fetch(`http://192.168.1.6:4000/login/contactame`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(datos)
+    })
+      .then((res) => res.json())
+      .then(data => {
+        Swal.close()
+        if (data.ok) {
+          Swal.fire({
+            title: "¡Mensaje Enviado!",
+            text: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#06b6d4",
+          })
+        } else {
+          Swal.fire({
+            title: "¡Tenemos un Problema!",
+            text: "Gracias por contactarnos. Intente mas tarde, por favor.",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#06b6d4",
+          })
+        }
+      })
   }
 
   return (

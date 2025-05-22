@@ -17,6 +17,7 @@ import image10 from "../../assets/part2/queprocesamos/image1.png"
 import image11 from "../../assets/part2/queprocesamos/image2.png"
 import image12 from "../../assets/part2/queprocesamos/image3.png"
 import image13 from "../../assets/part2/queprocesamos/image4.png"
+import image14 from "../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image4.png"
 
 const AISection = () => {
   useEffect(() => {
@@ -38,7 +39,7 @@ const AISection = () => {
 
   // Image arrays for each section
   const sectionImages = [
-    [image10, image11, image12, image13], // Que procesamos
+    [image10, image11, image12, image13,image14], // Que procesamos
     [image1, image2, image3, image4], // Como lo hacemos
     [image5, image6, image7, image8], // Para que lo hacemos
   ]
@@ -106,7 +107,7 @@ const AISection = () => {
         "Usamos modelos de deep learning entrenados para detectar, clasificar y vectorizar automáticamente objetos y cambios en el terreno",
       caption: "Procesamiento con inteligencia artificial",
       dropdownContent: [
-        "Desde pequeños plantines hasta grandes infraestructuras",
+        "Desde pequeñas plántulas hasta grandes infraestructuras",
         "Procesamiento masivo en minutos u horas",
         "Fusión de datos multifuente",
       ],

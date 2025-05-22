@@ -73,12 +73,12 @@ const AgriculturaPage = () => {
               sensores avanzados e inteligencia artificial, optimizando la sostenibilidad y productividad de tu
               operación.
             </p>
-            <button
-              onClick={goToContact}
+            <a
+              href="/#contact"
               className="bg-[#22d3ee] hover:bg-[#0ea5e9] text-white font-medium py-3 px-8 rounded-md transition-colors"
             >
               CONTACTANOS
-            </button>
+            </a>
           </div>
         </div>
       </section>

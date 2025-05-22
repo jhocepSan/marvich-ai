@@ -8,16 +8,19 @@ import imageInferior from "../../../assets/servicios_publicos/inferior.png"
 import imageBanner from "../../../assets/servicios_publicos/superior.png"
 import image1l from "../../../assets/servicios_publicos/1-fila-lateral-mobile-mapping/1lateral.png"
 import image2l from "../../../assets/servicios_publicos/1-fila-lateral-mobile-mapping/2lateral.png"
+import image3l from "../../../assets/servicios_publicos/3-fila-lateral-otros/image1.png"
 import image1d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image3.png"
 import image2d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image2.png"
+import image3d from "../../../assets/servicios_publicos/3-fila-lateral-otros/image2.png"
+import image4d from "../../../assets/servicios_publicos/2-fila-lateral-infraestructura-soterrada/image4.png"
 
 const ServiciosPublicosPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [fadeIn, setFadeIn] = useState(true)
 
   // Array of images for the slideshow
-  const images = [image1l, image2l]
-
+  const images = [image1,image1l, image2l,image3l]
+  const imagess = [image4d,image1d,image2d,image3d]
   // Effect to handle image transitions
   useEffect(() => {
     const transitionInterval = setInterval(() => {
@@ -71,12 +74,12 @@ const ServiciosPublicosPage = () => {
               Detecta, visualiza y gestiona redes visibles y soterradas con tecnologías geoespaciales, imágenes 360° y
               mobile mapping asistido por inteligencia artificial y realidad aumentada.
             </p>
-            <button
-              onClick={goToContact}
+            <a
+              href="/#contact"
               className="bg-[#22d3ee] hover:bg-[#0ea5e9] text-white font-medium py-3 px-8 rounded-md transition-colors"
             >
               CONTACTANOS
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -120,18 +123,25 @@ const ServiciosPublicosPage = () => {
               </div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               {/* Main large image */}
               <div className="rounded-xl overflow-hidden shadow-lg h-[400px]" data-aos="fade-left">
                 <img
                   src={images[currentImageIndex] || "/placeholder.svg"}
                   alt="Servicios públicos - Infraestructura urbana"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-md"
                 />
               </div>
 
+              <div className="rounded-xl overflow-hidden shadow-lg h-[400px]" data-aos="fade-right">
+                <img
+                  src={imagess[currentImageIndex] || "/placeholder.svg"}
+                  alt="Servicios públicos - Infraestructura urbana"
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
               {/* Additional images from the banner and inferior images */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 notShow">
                 <div className="rounded-xl overflow-hidden shadow-lg h-48" data-aos="fade-left" data-aos-delay="100">
                   <img
                     src={image1d || "/placeholder.svg"}

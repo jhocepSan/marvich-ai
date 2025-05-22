@@ -49,7 +49,7 @@ const GeospatialHero = () => {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            Capture, comprenda, analice y visualice los fenómenos del mundo real para impulsar decisiones inteligentes
+            Captura, comprende, analiza y visualiza los fenómenos del mundo real para impulsar decisiones inteligentes
             de acuerdo con sus ubicaciones.
           </p>
         </div>

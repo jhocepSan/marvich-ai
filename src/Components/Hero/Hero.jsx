@@ -81,7 +81,7 @@ const Hero = () => {
               <div className="">
                 {/* Button with link */}
                 <a
-                  href="/contacto"
+                  href="/#contact"
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${colors.bg} text-white ${colors.hover} inline-block`}
                 >
                   Ponte en contacto
