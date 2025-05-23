@@ -78,7 +78,7 @@ export const Contact = () => {
             <div className="mb-6 md:mb-8">
               <div className="bg-gray-700 rounded-lg h-64 md:h-80 overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53231.43021538343!2d-70.59993507832033!3d-33.41827010000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2c2c9b61d5%3A0x8f1b6b9a96f8680e!2sLas%20Condes%2C%20Santiago%20Metropolitan%20Region%2C%20Chile!5e0!3m2!1sen!2s!4v1714149371889!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.1679940782626!2d-70.57292267138891!3d-33.408145071088846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2733156ea1%3A0x8a4e18a8f0e340f7!2sBadajoz!5e0!3m2!1ses-419!2sbo!4v1748017387780!5m2!1ses-419!2sbo"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -99,7 +99,7 @@ export const Contact = () => {
                 </div>
                 <div className="ml-4">
                   <h5 className="text-base md:text-lg font-semibold text-white">Teléfono</h5>
-                  <p className="text-gray-300">+562 32341267</p>
+                  <p className="text-gray-300">+562 24801798</p>
                 </div>
               </div>
 

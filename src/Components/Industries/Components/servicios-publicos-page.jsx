@@ -19,7 +19,7 @@ const ServiciosPublicosPage = () => {
   const [fadeIn, setFadeIn] = useState(true)
 
   // Array of images for the slideshow
-  const images = [image1,image1l, image2l,image3l]
+  const images = [image2l,image1l, image2l,image3l]
   const imagess = [image4d,image1d,image2d,image3d]
   // Effect to handle image transitions
   useEffect(() => {

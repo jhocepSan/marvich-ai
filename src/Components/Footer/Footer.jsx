@@ -12,7 +12,7 @@ export const Footer = () => {
           <p className="text-gray-400 text-center mb-6">
             Las Condes, Santiago - Chile
             <br />
-            +562 32341267 - contacto@marvich-ai.cl
+            +562 24801798 - contacto@marvich-ai.cl
           </p>
 
           <div className="flex space-x-4 mb-8">
